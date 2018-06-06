@@ -12,7 +12,6 @@ export default async function(connection: Connection, queue: string, outDir: str
       channel.consume(queue, (message: Message | null) => {
         if (message) {
           const obj = message.content.toString()
-          console.log(obj)
           const fn = path.join(outDir, `${ho.sha1(obj)}.json`)
           fs.writeJSONSync(fn, obj)
           channel.ack(message)
