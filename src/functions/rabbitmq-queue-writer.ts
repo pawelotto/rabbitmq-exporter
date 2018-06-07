@@ -8,7 +8,7 @@ export default async function(sourceConnection: Connection, targetConnection: Co
     const targetChannel: ConfirmChannel = await targetConnection.createConfirmChannel()
     if (sourceChannel && targetChannel) {
       const targ = await targetChannel.assertQueue(queue)
-      sourceChannel.prefetch(1)
+      sourceChannel.prefetch(20)
       sourceChannel.consume(queue, (message: Message | null) => {
         if (message) {
           targetChannel.sendToQueue(queue, message.content, {}, (err, ok) => {
