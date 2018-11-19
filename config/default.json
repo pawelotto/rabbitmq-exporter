@@ -1,0 +1,5 @@
+{
+  "rabbitMQSourceString": "YOUR_SOURCE_AMQP_CONNECTION_STRING",
+  "rabbitMQTargetString": "YOUR_TARGET_AMQP_CONNECTION_STRING",
+  "rabbitMQQueue": "YOUR_QUEUE_NAME"
+}
